@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex_02</title>
+</head>
+<body>
+  
+  <input type="number" id="input">
+  <button onclick="getValue()">Enviar</button>
+
+  <input type="number" id="guess">
+  <button onclick="guessValue()">Guess</button>
+
+  <script>
+    let savedValue = null;
+
+    function getValue() {
+      savedValue = Number(document.getElementById('input').value);
+      console.log('O valor salvo é:', savedValue);
+    }
+
+    function guessValue() {
+      let guessedValue = Number(document.getElementById('guess').value);
+      console.log("Guess:", guessedValue);
+      console.log("Saved:", savedValue)
+      
+          if (savedValue < guessedValue) {
+            console.log('O número correto é menor')
+          } else if (savedValue > guessedValue) {
+            console.log('O número correto é maior')
+          } else {
+            console.log('Parabéns! Você acertou.')
+          }
+    }
+
+  </script>
+</body>
+</html>
