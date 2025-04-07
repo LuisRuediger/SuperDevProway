@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex_01</title>
+</head>
+<body>
+    <input type="number" name="input" id="input">
+    <button onclick="getValue()">Mandar</button>
+</body>
+
+<script>
+  function getValue() {
+    let inputValue = document.getElementById('input').value
+    console.log(inputValue)
+
+    for (let i = 0; i <= inputValue; i++) {
+      let int = i % 2
+
+      if (int == 0) {
+        console.log("O número:", i, "é par")
+      } else {
+      }
+    }
+  }
+
+</script>
+
+</html>
