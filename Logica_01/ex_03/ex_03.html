@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex_03</title>
+</head>
+<body>
+  <h2>Escreva um número:</h2>
+  <input type="number" name="input" id="input">
+  <button onclick="triangulo()">Resultado</button>
+
+  <div id="result"></div>
+
+  <script>
+    function triangulo() {
+      let inputValue = document.getElementById("input").value
+      let result = ""
+
+        for (let i = 1; i <= inputValue; i++) {
+
+          for (let j = 1; j <= i; j++) {
+          result = result + "*"
+
+        }
+        
+        result = result + "<br>"
+        
+        document.getElementById("result").innerHTML = result
+      }
+    }
+
+
+  </script>
+</body>
+</html>
