@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex_04</title>
+</head>
+<body>
+  <h1>Escreva um número:</h1>
+  <input type="number" id="input">
+  <button onclick="getInputValue()">Resultado</button>
+
+  <h2 id="result"></h2>
+
+  <script>    
+    function getInputValue() {
+      var inputValue = document.getElementById("input").value
+      let evenNumber = inputValue % 2
+
+      if ( inputValue < 0 ) {
+          document.getElementById('result').innerHTML = "Números negativos não são permitidos."
+          return
+        }
+  
+        if ( evenNumber == 0 ) {
+          document.getElementById("result").innerHTML = "O número é par!"
+        } else {
+          document.getElementById("result").innerHTML = "O número é impar!"
+        }
+    }
+
+  </script>
+</body>
+</html>
