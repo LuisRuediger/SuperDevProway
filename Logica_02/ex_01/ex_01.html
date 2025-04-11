@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex_01</title>
+</head>
+<body>
+  <h1>Digite 04 notas do aluno:</h1>
+  <input type="number" id="input">
+  <button id="inputButton" onclick="insertValueInArray(); validation()">Registrar nota</button>
+  <br>
+  <br>
+  <br>
+  <button id="mediaButton" disabled onclick="media()">Calcular média</button>
+  <br>
+  <br>
+  <span>A média é:</span>
+  <span id="result"></span>
+
+  <script>
+    let values = []
+
+    function getInputValues() {
+      let inputValue = document.getElementById('input').value
+      return inputValue
+    }
+
+    function insertValueInArray() {
+      let inputValuesPush = getInputValues()
+      values.push(inputValuesPush)  
+    }
+
+    function validation() {
+      if (values.length >= 4) {
+        document.getElementById('inputButton').disabled = true
+      }
+
+      if (values.length === 4) {
+        document.getElementById('mediaButton').disabled = false
+      }
+    }
+
+    function media() {
+      let nota01 = Number(values[0])
+      let nota02 = Number(values[1])
+      let nota03 = Number(values[2])
+      let nota04 = Number(values[3])
+      
+      let media = (nota01 + nota02 + nota03 + nota04) / 4
+
+      document.getElementById('result').innerHTML = media
+    }
+
+
+    
+
+
+  </script>
+</body>
+</html>
