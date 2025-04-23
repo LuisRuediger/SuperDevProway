@@ -6,6 +6,53 @@
   <title>ex_02</title>
 </head>
 <body>
-  
+  <h1>Digite 10 numeros:</h1>
+  <input type="number" id="input">
+  <button id="inputButton" onclick="insertValuesInArray()">Registrar número</button>
+
+  <button id="result" onclick="evenNumbers()" disabled>Exibir numeros inteiros</button>
+
+  <script>
+    let values = []
+
+    function getInputValues() {
+      let inputValues = document.getElementById('input').value
+      return inputValues
+    }
+
+    function insertValuesInArray() {
+      let pushInputValues = getInputValues()
+
+      values.push(pushInputValues)
+
+      console.log(values)
+
+      if (values.length >= 3) {
+        document.getElementById('inputButton').disabled = true
+      }
+
+      if (values.length === 3) {
+        document.getElementById('result').disabled = false
+      }
+    }
+
+    console.log(values)
+
+    function evenNumbers() {
+
+      for (i = 0; i < values.length; i++) {
+        let number = Number(values[i])
+
+        console.log(number)
+
+        // if (Number(values[i]) % 2 === 0) {
+        //   console.log("par")
+        // }
+    }
+  }
+
+
+
+  </script>
 </body>
 </html>
