@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tabela Linha Mesclada</title>
+
+  <style>
+    table, tr, td , th {
+      border: solid 1px black;
+      border-collapse: collapse;
+      
+    }
+
+    td {
+      padding: 10px;
+      width: 200px;
+    }
+
+    th {
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exemplo de tabela com Linha Mesclada</h1>
+
+  <table>
+    <tr>
+      <th>Curso</th>
+      <td>Desenvolvedor</td>
+    </tr>
+    
+    <tr>
+      <th rowspan="2">Tecnologia</th>
+      <td>HTML</td>
+    </tr>
+
+    <tr>
+      <td>CSS</td>
+    </tr>
+
+  </table>
+</body>
+</html>
