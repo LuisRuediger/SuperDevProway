@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+</head>
+<body>
+
+  <h1>Exemplo de formulário</h1>
+
+  <form>
+    <label for="name">Nome:</label><br>
+    <input type="text" name="name" id="name" required>
+    
+    <br><br>
+    <label for="sobrenome">Sobrenome:</label><br>
+    <input type="text" sobrenome="sobrenome" id="sobrenome">
+
+    <br><br>
+    <p>Selecione uma Tecnologia:</p>
+
+    <input type="radio" name="tecnologia" id="html" value="1">
+    <label for="html">HTML</label>
+
+    <input type="radio" name="tecnologia" id="css" value="2">
+    <label for="css">CSS</label>
+
+    <input type="radio" name="tecnologia" id="javascript" value="3">
+    <label for="javascript">Javascipt</label>
+
+    <br><br>
+    <p>Escolha um dia da semana:</p>
+    <input type="checkbox" name="seg" id="seg">
+    <label for="seg">Segunda-feira</label><br>
+    <input type="checkbox" name="ter" id="ter">
+    <label for="ter">Terça-feira</label><br>
+    <input type="checkbox" name="qua" id="qua">
+    <label for="qua">Quarta-feira</label><br>
+    <input type="checkbox" name="qui" id="qui">
+    <label for="qui">Quinta-feira</label><br>
+    <input type="checkbox" name="sex" id="sex">
+    <label for="sex">Sexta-feira</label><br>
+    <input type="checkbox" name="sab" id="sab">
+    <label for="sab">Sábado-feira</label><br>
+    <input type="checkbox" name="dom" id="dom">
+    <label for="dom">Domingo-feira</label><br>
+
+    <br>
+    <label for="comentario">Deixe seu comentário</label><br>
+    <textarea name="comentario" id="comentario" rows="5" cols="40" placeholder="Digite seu comentário aqui..."></textarea>
+
+    <br><br>
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Limpar Campos">
+
+
+
+  </form>
+</body>
+</html>
