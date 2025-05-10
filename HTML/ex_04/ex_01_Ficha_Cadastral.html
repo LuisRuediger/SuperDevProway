@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha Cadastral</title>
+
+  <style>
+    form {
+      width: 1000px;
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+     #title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    label {
+      width: 50px;
+    }
+
+    .containerNameAndAdress {
+      display: flex;
+      justify-content: initial;
+      gap: 50px;
+    }
+
+    #name {
+      flex-grow: 1;
+    }
+
+    #adress {
+      flex-grow: 1;
+    }
+
+    .containerRgAndCpf {
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    #rg {
+      flex-grow: 1;
+    }
+
+    .containerSexoDataNas {
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+
+    
+  </style>
+</head>
+<body>
+  <form action="#">
+    <p id="title">Ficha Cadastral</p>
+
+    <div class="containerNameAndAdress">
+      <label for="name">Nome:</label>
+      <input type="text" name="name" id="name">
+    </div>
+
+    <br><br>
+    <div class="containerRgAndCpf">
+      <label for="rg">RG:</label>
+      <input type="text" name="rg" id="rg">
+      <label for="cfp">CPF:</label>
+      <input type="text" name="cfp" id="cfp">
+    </div>
+
+
+    <br><br>
+    <div class="containerNameAndAdress">
+      <label for="adress">Endereço:</label>
+      <input type="text" name="adress" id="adress">
+    </div>
+
+    <br><br>
+
+    <div class="containerSexoDataNas">
+      <label for="sexo">Sexo:</label>
+      <select name="sexo" id="sexo">
+        <option value="mas">Masculino</option>
+        <option value="fem">Feminino</option>
+      </select>
+  
+      <label for="date">Data de nascimento:</label>
+      <input type="date" name="date" id="date">
+    </div>
+
+    <br><br>
+    <span>Situação Civil</span>
+
+    <input type="radio" name="solteiro" id="solteiro">
+    <label for="solteiro">Solteiro</label>
+    <input type="radio" name="casado" id="casado">
+    <label for="casado">Casado</label>
+    <input type="radio" name="viuvo" id="viuvo">
+    <label for="viuvo">Viúvo</label>
+
+    <br><br>
+    <input type="reset" value="Limpar Dados" id="button">
+
+  </form>
+</body>
+</html>
