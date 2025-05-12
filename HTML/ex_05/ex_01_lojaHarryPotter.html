@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja Do Harry Potter</title>
+
+  <style>
+    table, tr, td , th {
+      border: solid 1px black;
+      border-collapse: collapse;
+      
+    }
+
+    td {
+      padding: 10px;
+      width: 100px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1 id="top">🪄 Bem-vindo a Loja Mágica do Mundo de Harry Potter.</h1>
+  <p>Entre e fique a vontade! Aqui você encontra itens incríveis direto de Hogsmeade e do Beco Diagonal</p>
+
+  <ul>
+    <li>Varinhas originais de personagens</li>
+    <li>Poções e ingredientes</li>
+    <li>Artigos de vestuário das casas de Hogwarts</li>
+    <li>Livros raros de magia</li>
+  </ul>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Harry_Potter_wordmark.svg/2560px-Harry_Potter_wordmark.svg.png" alt="Logo Harry Potter" width="200px">
+
+  <hr>
+
+  <h2>🛍️ Produtos em Destaque</h2>
+  <table>
+    <tr>
+      <th>Produto</th>
+      <th>Descrição</th>
+      <th>Preço</th>
+    </tr>
+    <tr>
+      <td>Varinha do Harry Potter</td>
+      <td>Réplica oficial com base</td>
+      <td>R$ 149,90</td>
+    </tr>
+    <tr>
+      <td>Cachecol da Grifinória</td>
+      <td>Feito com lã mágica antitérmica</td>
+      <td>R$ 89,90</td>
+    </tr>
+    <tr>
+      <td>Livro: Poções Avançadas</td>
+      <td>Edição ilustrada, capa dura</td>
+      <td>R$ 129,90</td>
+    </tr>
+  </table>
+
+  <br><hr>  
+
+  <h2>📝 Formulário de pedido</h2>
+
+  <form action="#">
+    <label for="name">Nome completo:</label><br>
+    <input type="text" name="name" id="name" required><br>
+
+    <label for="email">Email:</label><br>
+    <input type="text" email="email" id="email" required><br>
+
+    <label for="address">Endereço (trouxas ou corujas):</label><br>
+    <input type="text" name="address" id="address" required><br>
+
+    <p>Selecione os produtos desejados:</p>
+    <input type="checkbox" name="products" id="products">
+    <label for="magicwand">Varinha do Harry Potter</label><br>
+
+    <input type="checkbox" name="cachecol" id="cachecol">
+    <label for="magicwand">Cachecol da Grifinória</label><br>
+
+    <input type="checkbox" name="book" id="book">
+    <label for="magicwand">Livro: Poções Avançadas</label><br><br>
+
+    <label for="payment">Forma de pagamento:</label><br>
+    <select name="payment" id="payment">
+      <option value="01">Pix</option>
+      <option value="02">Cartão de Crédito</option>
+      <option value="03">Entrega via Coruja (pagamento mágico)</option>
+    </select><br><br>
+
+    <p>Você deseja embrulho temático Hogwarts</p>
+    <input type="radio" name="yes" id="yes">
+    <label for="yes">Sim</label><br>  
+    
+    <input type="radio" name="no" id="no">
+    <label for="no">Não</label><br><br>
+
+    <label for="message">Mensagem adicional:</label><br>
+    <textarea name="message" id="message" rows="10" cols="60" placeholder="Ex: Desejo receber com urgência. Expelliarmus!"></textarea><br><br>
+
+    <input type="submit" value="Finaliza Pedido">
+  </form>
+
+  <hr>
+
+<a href="#top">🔝 Voltar ao topo</a>
+
+</body>
+
+</html>
