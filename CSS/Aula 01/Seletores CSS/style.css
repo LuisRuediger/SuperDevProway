@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body  {
+  padding: 20px;
+}
+
+p, h1 {
+  margin-bottom: 10px;
+}
+
+p {
+  color: brown;
+}
+
+.content {
+  color: cornflowerblue;
+}
+
+#idContent {
+  background-color: black;
+  color: chartreuse;
+  padding: 30px;
+  font-family: 'Courier New', Courier, monospace;
+}
