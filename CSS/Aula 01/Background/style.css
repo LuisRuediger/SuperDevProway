@@ -1,0 +1,7 @@
+body {
+  /* background-color: aquamarine;
+  background-image: url(./images/naruto.jpg);
+  background-repeat: repeat-y; */
+
+  background: tomato url(./images/naruto.jpg) repeat-y;
+}
