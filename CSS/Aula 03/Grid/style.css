@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: tomato;
+  padding: 10px;
+  display: grid;
+  /* Quantidade de colunas */
+  grid-template-columns: auto auto auto auto; 
+  gap: 10px;
+}
+
+.item {
+  background-color: seagreen;
+  color: #FFF;
+  padding: 10px;
+  text-align: center;
+  border: solid 1px #FFF;
+}
+
+.destaque {
+  /* Cria proporções específicas para as colunas. 
+  Ex.: a tag com a classe .destaque vai da posição 01 até a 04 do layout */
+  grid-column: 1/4;
+}
+
+.destaque-02 {
+  grid-column: 2/5;
+}
