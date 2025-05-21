@@ -7,15 +7,14 @@
 .container {
   width: 1000px;
   text-align: center;
-  border: solid 1px blue;
+  border: solid 1px cornflowerblue;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: grid;
   grid-template-columns: auto auto auto;
 }
 
-.container > div {
-  border: solid 1px blue;
-  padding: 10px;
+div {
+  border: solid 1px cornflowerblue;
 }
 
 .header {
