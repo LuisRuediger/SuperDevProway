@@ -1,0 +1,12 @@
+.container {
+  border: solid 1px red;
+  height: 500px;
+}
+
+.borda {
+  border: solid 1px red;
+}
+
+.altura {
+  height: 100%;
+}
