@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+p {
+  width: 400px;
+}
+
+.p-linha::first-line {
+  background-color: tomato;
+  color: seagreen;
+}
+
+.p-letra::first-letter {
+  font-size: 35px;
+}
+
+.p-select::selection {
+  background-color: black;
+  color: gold;
+}
