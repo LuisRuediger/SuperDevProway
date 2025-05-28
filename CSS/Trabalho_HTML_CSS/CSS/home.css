@@ -1,0 +1,177 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  height: 100vh;
+  padding-inline: 5rem;
+  background: #F4ECE1;
+}
+ 
+header {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.nav-links li {
+  list-style-type: none;
+  padding: 3px;
+  transition: all 0.2s ease;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-links li:hover {
+  border-bottom: solid 3px #FF7E00;
+}
+
+#container-home {
+  padding-top: 3rem;
+  display: flex;
+}
+
+#container-home main {
+  width: 50%;
+}
+
+#container-home h1 {
+  text-align: center;
+  font-size: 125px;
+  font-weight: 600;
+  color: #FF7E00;
+}
+
+#container-home h2 {
+  margin-top: -50px;
+  text-align: center;
+  font-size: 52px;
+  font-weight: bold;
+  color: #2F2F2F;
+}
+
+#container-home p {
+  padding: 50px;
+  margin-top: 100px;
+  color: #909090;
+  font-size: 24px;
+  line-height: 138%;
+}
+
+#container-home span {
+  padding: 50px;
+  margin-top: 100px;
+  color: #FF7E00;
+  font-size: 18px;
+  line-height: 138%;
+}
+
+#container-home img {
+  width: 600px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 16px;
+  text-align: center;
+  border-top: solid 1px #dbdbdb;
+  color: #b1b1b1;
+  background-color: #F4ECE1;
+} 
+
+@media (max-width: 1320px) {
+  #container-home h1 {
+    font-size: 80px;
+  }
+
+  #container-home p {
+    padding: 24px;
+    margin-top: 48px;
+    font-size: 16px;
+  }
+
+  #container-home span {
+    padding: 0;
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width: 425px) {
+
+  body {
+    height: 100%;
+    padding-inline: 2rem;
+    background-color: #F4ECE1;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+
+  #container-home {
+    padding-top: 1rem;
+    flex-direction: column;
+  }
+
+  #container-home main {
+    width: 100%;
+  }
+
+  #container-home h1 {
+    font-size: 48px;
+  }
+
+  #container-home h2 {
+    margin-top: 0;
+    font-size: 24px;
+  }
+
+  #container-home p {
+    padding: 10px;
+    margin-top: 24px;
+    font-size: 16px;
+  }
+
+  #container-home span {
+    display: block;
+    padding: 10px;
+    margin-top: 0px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  #container-home img {
+    width: 300px;
+    margin-top: 24px;
+  }
+
+  footer {
+    background-color: #F4ECE1;
+  }
+}
