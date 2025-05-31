@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exibir nome</title>
+</head>
+<body>
+  <h1>Capturando valores do HTML com Javascript</h1>
+
+  <input type="text" name="name" id="name">
+  <button onclick="exibirNome()">Clique para capturar o nome</button>
+
+  <br><br><br>
+  <span>O nome digitado foi:</span>
+  <h1 id="result"></h1>
+
+  <script>
+    function exibirNome() {
+      let name = document.getElementById('name').value
+      document.getElementById('result').innerHTML = name
+      console.log(name)
+    }
+  </script>
+
+</body>
+</html>
