@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 01</title>
+</head>
+<body>
+  <label for="number01">Digite o número 01</label>
+  <input type="number" name="number01" id="number01">
+
+  <label for="number02">Digite o número 02</label>
+  <input type="number" name="number02" id="number02">
+
+  <button onclick="getValues()">Calcular</button>
+
+  <br><br><br><br>
+  <span>A soma é: </span>
+  <span id="som"></span><br>
+
+  <span>A subtração é: </span>
+  <span id="sub"></span><br>
+
+  <span>A multiplicação é: </span>
+  <span id="mul"></span><br>
+
+  <span>A divisão é: </span>
+  <span id="div"></span><br>
+
+  <script>
+
+    function getValues() {
+      let value01 = document.getElementById('number01').value
+      let value02 = document.getElementById('number02').value
+
+      let som = Number(value01) + Number(value02)
+      let sub = Number(value01) - Number(value02)
+      let div = Number(value01) * Number(value02)
+      let mul = Number(value01) / Number(value02)
+
+      console.log(som, sub, div, mul)
+
+      document.getElementById('som').innerHTML = som
+      document.getElementById('sub').innerHTML = sub
+      document.getElementById('mul').innerHTML = mul
+      document.getElementById('div').innerHTML = div
+    }
+  </script>
+
+</body>
+</html>
