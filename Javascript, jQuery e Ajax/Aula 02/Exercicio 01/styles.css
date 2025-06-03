@@ -1,0 +1,71 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0b39ad;
+}
+
+div {
+  width: 300px;
+  margin: auto;
+  padding: 8px;
+  background-color: #FFF;
+  box-shadow: 2px 2px 5px black;
+  text-align: center;
+  border-radius: 4px;
+}
+
+input {
+  width: 100%;
+  border: none;
+  border-bottom: solid 1px #0b39ad;
+  outline: none;
+}
+
+h1, input {
+  background-color: #FFF;
+  color: #0b39ad;
+  padding: 8px 20px;
+}
+
+button {
+  margin-top: 16px;
+  padding: 8px 36px;
+  color: #FFF;
+  background-color: #0b39ad;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #061d58;
+}
+
+button:disabled {
+  background-color: #7e9ce6;
+}
+
+.initial {
+  padding: 8px 20px;
+}
+.login-success {
+  font-size: 12px;
+  background-color: #FFF;
+  color: rgb(0, 175, 0);
+  padding: 20px;
+  text-align: start;
+}
+
+.login-failed {
+  font-size: 12px;
+  background-color: #FFF;
+  color: rgb(193, 10, 10);
+  padding: 20px;
+  text-align: start;
+}
