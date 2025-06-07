@@ -1,0 +1,118 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: aliceblue;
+  color: aliceblue;
+}
+
+.form-container {
+  width: 400px;
+  min-height: 400px;
+  padding: 24px;
+  border-radius: 8px;
+  background-color: cornflowerblue;
+}
+
+.form-container h1 {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 600;
+  color: aliceblue;
+}
+
+.form-container div {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-container label {
+  font-size: 14px;
+  color: #424242;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  color: #2d2d2d;
+  background-color: #FFF;
+}
+
+.form-container input::placeholder {
+  color: #c8c8c8;
+}
+
+.form-container textarea {
+  width: 100%;
+  max-width: 352px;
+  min-height: 100px;
+  padding: 10px;
+  font-size: 16px;
+  color: #2d2d2d;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  overflow: hidden;
+  resize: none;
+}
+
+.form-container textarea::placeholder {
+  color: #c8c8c8;
+}
+
+.form-container button {
+  margin-top: 24px;
+  padding: 12px 36px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #014182;
+  color: #FFF;
+  transition: all 0.2s ease;
+}
+
+.form-container button:hover {
+  background-color: #1b347a;
+}
+
+.card {
+    width: 400px;
+    min-height: 400px;
+    padding: 24px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: cornflowerblue;
+}
+
+.card span {
+  display: block;
+  margin-top: 16px;
+  color: #424242;
+}
+
+.card p {
+  width: 100%;
+  padding: 8px 16px;
+  word-break: break-word;
+  color: #2d2d2d;
+  border-bottom: solid 1px #014182;
+}

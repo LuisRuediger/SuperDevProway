@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Exercicio Objetos</title>
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>Inserir produto:</h1>
+    <div>
+      <label for="code">Insira o código:</label>
+      <input type="text" id="code" placeholder="#123123">
+    </div>
+    <div>
+      <label for="price">Insira o Preço:</label>
+      <input type="number" id="price" placeholder="19.90">
+    </div>
+    <div>
+      <label for="description">Insira a descrição:</label>
+      <textarea name="description" id="description" placeholder="Cor: Branco; Ano: 2025"></textarea>
+    </div>
+
+    <button onclick="productInformation()">Inserir</button>
+  </div>
+
+
+  <div class="card">
+    <span>Código:</span>
+    <p id="codeOut"></p>
+    <span>Preço:</span>
+    <p id="priceOut"></p>
+    <span>Descrição:</span>
+    <p id="descriptionOut"></p>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
