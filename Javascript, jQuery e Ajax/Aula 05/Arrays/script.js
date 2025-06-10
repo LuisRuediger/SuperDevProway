@@ -20,6 +20,10 @@ console.log(arrayList.toString());
 arrayList.shift();
 console.log(arrayList.toString());
 
+//1 parametro: posição do elemento desejado
+//2 parametro: quantidade de elementos a serem removidos a partir da primeira posição
+//3 parametro: novos elementos a serem inseridos na posição específica
+
 arrayList.splice(1,1);
 console.log(arrayList.toString());
 
