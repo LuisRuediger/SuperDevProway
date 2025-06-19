@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista</title>
+</head>
+<body>
+  <h2>Lista de funcionários</h2>
+  <div id="funcionarios"></div>
+
+  <script>
+    
+    function carregarFuncionario() {
+      const divFuncionario = document.getElementById('funcionarios')
+      const listaFuncionarios = JSON.parse(localStorage.getItem('lista'))
+
+      listaFuncionarios.forEach(funcionario => {
+        divFuncionario.innerHTML = `<p>${funcionario}</p>`
+      })
+    }
+
+    carregarFuncionario()
+
+  </script>
+</body>
+</html>
