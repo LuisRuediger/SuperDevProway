@@ -3,6 +3,7 @@
 
 # Node modules
 node_modules/
+npm-debug.log
 
 # Build outputs
 dist/
@@ -22,10 +23,6 @@ npm-debug.log*
 .env.local
 .env.*.local
 
-# IDEs
-.vscode/
-.idea/
-
 # Coverage reports
 coverage/
 
@@ -36,3 +33,35 @@ coverage/
 # Optional: Ignore package lock files
 # package-lock.json
 # yarn.lock
+
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/libpeerconnection.log
+testem.log
+/typings
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
