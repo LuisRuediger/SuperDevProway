@@ -1,12 +1,13 @@
-<div>
-  <h2>Dados do aluno</h2>
+<div class="card">
+  <img src="assets/images/avatar.png" alt="">
+  <h2>{{ aluno.nome }}</h2>
   <p>
-    <strong>Código:</strong> {{ codigo }}
+    <strong>Matrícula:</strong> {{ aluno.matricula }}
   </p>
   <p>
-    <strong>Nome:</strong> {{ nome }}
+    <strong>Cursos:</strong> {{ aluno.cursos.toString() }}
   </p>
   <p>
-    <strong>Curso:</strong> {{ curso }}
+    <strong>Email:</strong> {{ aluno.email }}
   </p>
 </div>

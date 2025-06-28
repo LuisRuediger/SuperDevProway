@@ -1,0 +1,13 @@
+.title, footer {
+  background-color: #00007c;
+  color: #FFF;
+  text-align: center;
+  padding: 10px;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}
