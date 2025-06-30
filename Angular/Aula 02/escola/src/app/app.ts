@@ -12,6 +12,7 @@ export class App {
 
   listaAlunos: AlunoInterface[] = [
     {
+      image: "assets/images/avatar.png",
       nome: "Luis",
       matricula: 123,
       email: "luis@proway.com",
@@ -19,11 +20,20 @@ export class App {
       cursos: ["HTML", "CSS", "Javascript"]
     },
     {
-      nome: "Felipe",
+      image: "assets/images/avatar1.png",
+      nome: "Fabio",
       matricula: 456,
-      email: "felipe@proway.com",
+      email: "fabio@proway.com",
       cadastro: false,
       cursos: ["Java"]
+    },
+    {
+      image: "assets/images/avatar2.png",
+      nome: "Chris",
+      matricula: 789,
+      email: "chris@proway.com",
+      cadastro: false,
+      cursos: ["Postgres"]
     }
   ];
 }

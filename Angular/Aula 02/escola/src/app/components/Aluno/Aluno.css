@@ -1,11 +1,12 @@
 .card {
   width: 250px;
   padding: 10px;
-  border: solid 1px #b7b7b7;
-  color: #313131;
+  border: solid 1px #C8D4E5;
+  color: #2C3F70;
 }
 
 h2 {
+  margin: 8px 0px 16px 0px;
   text-align: center;
   font-size: 18px;
 }
@@ -17,4 +18,9 @@ p {
 img {
   width: 100%;
   border-radius: 50%;
+}
+
+.escola {
+  text-align: center;
+  padding: 24px 0px 10px 0px;
 }
