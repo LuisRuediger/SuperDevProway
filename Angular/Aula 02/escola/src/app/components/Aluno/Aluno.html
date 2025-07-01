@@ -10,5 +10,8 @@
   <p>
     <strong>Email:</strong> {{ aluno.email }}
   </p>
+  <div class="aprovacao" [ngClass]="aluno.cadastro ? 'aprovado' : 'reprovado' ">
+    <p>Aluno {{ aluno.cadastro ? "Aprovado" : "Reprovado" }}</p>
+  </div>
   <p class="escola">Proway</p>
 </div>

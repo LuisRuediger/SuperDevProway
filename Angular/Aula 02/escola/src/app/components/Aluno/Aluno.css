@@ -24,3 +24,19 @@ img {
   text-align: center;
   padding: 24px 0px 10px 0px;
 }
+
+.aprovacao {
+  margin: 8px 0;
+  padding: 8px;
+  color: #E8EBED;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.aprovado {
+  background-color: #156915;
+}
+
+.reprovado {
+  background-color: #ad2e2e;
+}

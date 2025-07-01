@@ -16,7 +16,7 @@ export class App {
       nome: "Luis",
       matricula: 123,
       email: "luis@proway.com",
-      cadastro: false,
+      cadastro: true,
       cursos: ["HTML", "CSS", "Javascript"]
     },
     {
@@ -24,7 +24,7 @@ export class App {
       nome: "Fabio",
       matricula: 456,
       email: "fabio@proway.com",
-      cadastro: false,
+      cadastro: true,
       cursos: ["Java"]
     },
     {
