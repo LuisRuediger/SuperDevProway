@@ -8,6 +8,12 @@
 main {
   padding: 20px;
   display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cards {
+  display: flex;
   justify-content: center;
-  gap: 36px;
+  gap: 16px;
 }

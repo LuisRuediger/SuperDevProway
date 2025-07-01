@@ -1,0 +1,39 @@
+table {
+  margin: 16px;
+  border-collapse: collapse;
+  color: #2C3F70;
+}
+
+th {
+  width: 150px;
+  padding: 8px;
+  text-align: start;
+  background-color: #2C3F70;
+  color: #E8EBED;
+}
+
+tr {
+  transition: all ease-in 0.3ms;
+}
+
+tr:nth-child(odd) {
+  background-color: #C8D4E5;
+}
+
+table tr:hover {
+  color: #E8EBED;
+  background-color: #2C3F70;
+}
+
+td {
+  padding: 8px;
+}
+
+
+
+
+
+
+
+
+

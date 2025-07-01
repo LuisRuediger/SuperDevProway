@@ -34,6 +34,14 @@ export class App {
       email: "chris@proway.com",
       cadastro: false,
       cursos: ["Postgres"]
+    },
+    {
+      image: "assets/images/avatar2.png",
+      nome: "Chris",
+      matricula: 789,
+      email: "chris@proway.com",
+      cadastro: false,
+      cursos: ["Postgres"]
     }
   ];
 }
