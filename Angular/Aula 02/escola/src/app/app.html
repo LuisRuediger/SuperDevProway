@@ -1,13 +1,13 @@
 <h1 class="title">Sistema Alunos Proway</h1>
 
 <main>
-  <section class="cards">
+  <section class="cards" *ngIf="exibicao == 'cards'">
     <app-aluno [aluno]="listaAlunos[0]"></app-aluno>
     <app-aluno [aluno]="listaAlunos[1]"></app-aluno>
     <app-aluno [aluno]="listaAlunos[2]"></app-aluno>
   </section>
 
-  <section class="lista">
+  <section class="lista" *ngIf="exibicao == 'lista'">
     <app-aluno-lista [alunos]="listaAlunos"></app-aluno-lista>
   </section>
 </main>

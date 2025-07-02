@@ -10,6 +10,8 @@ import { AlunoInterface } from './interfaces/AlunoInterface';
 export class App {
   protected title = 'escola';
 
+  exibicao: string = 'lista';
+
   listaAlunos: AlunoInterface[] = [
     {
       image: "assets/images/avatar.png",
