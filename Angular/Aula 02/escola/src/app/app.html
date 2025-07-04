@@ -2,13 +2,11 @@
 
 <main>
   <section class="cards" *ngIf="exibicao == 'cards'">
-    <app-aluno [aluno]="listaAlunos[0]"></app-aluno>
-    <app-aluno [aluno]="listaAlunos[1]"></app-aluno>
-    <app-aluno [aluno]="listaAlunos[2]"></app-aluno>
+    <app-aluno *ngFor="let aluno of listaAlunos" [aluno]="aluno"></app-aluno>
   </section>
 
   <section class="lista" *ngIf="exibicao == 'lista'">
-    <app-aluno-lista [alunos]="listaAlunos"></app-aluno-lista>
+    <app-aluno-lista [lista]="listaAlunos"></app-aluno-lista>
   </section>
 </main>
 

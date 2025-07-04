@@ -10,7 +10,7 @@ import { AlunoInterface } from './interfaces/AlunoInterface';
 export class App {
   protected title = 'escola';
 
-  exibicao: string = 'lista';
+  exibicao: string = 'cards';
 
   listaAlunos: AlunoInterface[] = [
     {
