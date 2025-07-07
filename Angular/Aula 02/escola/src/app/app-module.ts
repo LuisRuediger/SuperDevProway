@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Aluno } from './components/Aluno/Aluno';
 import { AlunoLista } from './components/aluno-lista/aluno-lista';
+import { BotaoExibicao } from './components/botao-exibicao/botao-exibicao';
 
 @NgModule({
   declarations: [
     App,
     Aluno,
-    AlunoLista
+    AlunoLista,
+    BotaoExibicao
   ],
   imports: [
     BrowserModule,

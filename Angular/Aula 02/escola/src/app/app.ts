@@ -26,7 +26,7 @@ export class App {
       nome: "Fabio",
       matricula: 456,
       email: "fabio@proway.com",
-      cadastro: true,
+      cadastro: false,
       cursos: ["Java"]
     },
     {
@@ -34,16 +34,58 @@ export class App {
       nome: "Chris",
       matricula: 789,
       email: "chris@proway.com",
-      cadastro: false,
+      cadastro: true,
       cursos: ["Postgres"]
     },
     {
       image: "assets/images/avatar2.png",
-      nome: "Chris",
-      matricula: 789,
-      email: "chris@proway.com",
+      nome: "Maria",
+      matricula: 111,
+      email: "maria@proway.com",
       cadastro: false,
-      cursos: ["Postgres"]
+      cursos: ["Python"]
     }
   ];
+
+  alterarExibicao(): void {
+
+  if (this.exibicao == 'cards') {
+      this.exibicao = 'lista';
+    } else {
+      this.exibicao = 'cards'
+    }
+  }
+
+  listaFiltrada: AlunoInterface[] = this.listaAlunos;
+
+  exibirAprovados(): void {
+    this.listaFiltrada = [];
+
+    this.listaAlunos.map(aluno => {
+
+      if (aluno.cadastro == true) {
+        this.listaFiltrada.push(aluno)
+      }
+    })
+  }
+
+  exibirReprovados(): void {
+    this.listaFiltrada = [];
+
+    this.listaAlunos.map(aluno => {
+
+      if (aluno.cadastro == false) {
+        this.listaFiltrada.push(aluno)
+      }
+    })
+  }
+
+  exibirListaCompleta(): void {
+    this.listaFiltrada = [];
+
+    this.listaAlunos.map(aluno => {
+      this.listaFiltrada.push(aluno);
+    })
+  }
+
 }
