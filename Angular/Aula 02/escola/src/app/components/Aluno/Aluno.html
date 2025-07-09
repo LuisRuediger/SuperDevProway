@@ -10,8 +10,12 @@
   <p>
     <strong>Email:</strong> {{ aluno.email }}
   </p>
-  <div class="aprovacao" [ngClass]="aluno.cadastro ? 'aprovado' : 'reprovado' ">
-    <p>Aluno {{ aluno.cadastro ? "Aprovado" : "Reprovado" }}</p>
+  <p>
+    <strong>Média:</strong> {{ media }}
+  </p>
+
+  <div class="aprovacao" [ngClass]="media >=  7 ? 'aprovado' : 'reprovado' ">
+    <p>Aluno {{ media >= 7 ? "Aprovado" : "Reprovado" }}</p>
   </div>
   <p class="escola">Proway</p>
 </div>

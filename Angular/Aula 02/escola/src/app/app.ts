@@ -19,7 +19,8 @@ export class App {
       matricula: 123,
       email: "luis@proway.com",
       cadastro: true,
-      cursos: ["HTML", "CSS", "Javascript"]
+      cursos: ["HTML", "CSS", "Javascript"],
+      notas: [5,9,2]
     },
     {
       image: "assets/images/avatar1.png",
@@ -27,7 +28,8 @@ export class App {
       matricula: 456,
       email: "fabio@proway.com",
       cadastro: false,
-      cursos: ["Java"]
+      cursos: ["Java"],
+      notas: [10,9,8]
     },
     {
       image: "assets/images/avatar2.png",
@@ -35,7 +37,8 @@ export class App {
       matricula: 789,
       email: "chris@proway.com",
       cadastro: true,
-      cursos: ["Postgres"]
+      cursos: ["Postgres"],
+      notas: [7,8,9]
     },
     {
       image: "assets/images/avatar2.png",
@@ -43,7 +46,8 @@ export class App {
       matricula: 111,
       email: "maria@proway.com",
       cadastro: false,
-      cursos: ["Python"]
+      cursos: ["Python"],
+      notas: [7,6,7]
     }
   ];
 
