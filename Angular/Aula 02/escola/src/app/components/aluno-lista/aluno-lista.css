@@ -29,6 +29,31 @@ td {
   padding: 8px;
 }
 
+.btn {
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+tr td:last-child() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn-green {
+  background-color: #2c704b;
+  color: #E8EBED;
+}
+
+.btn-red {
+  background-color: #a34040;
+  color: #E8EBED;
+}
+
 
 
 

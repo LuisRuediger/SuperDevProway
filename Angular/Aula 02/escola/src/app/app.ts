@@ -10,7 +10,7 @@ import { AlunoInterface } from './interfaces/AlunoInterface';
 export class App {
   protected title = 'escola';
 
-  exibicao: string = 'cards';
+  exibicao: string = 'lista';
 
   listaAlunos: AlunoInterface[] = [
     {
@@ -87,8 +87,20 @@ export class App {
   exibirListaCompleta(): void {
     this.listaFiltrada = [];
 
-    this.listaAlunos.map(aluno => {
-      this.listaFiltrada.push(aluno);
+    this.listaFiltrada = this.listaAlunos;
+
+    // this.listaAlunos.map(aluno => {
+    //   this.listaFiltrada.push(aluno);
+    // })
+  }
+
+  onExcluir(matricula: number): void {
+
+    this.listaAlunos.forEach((aluno, index) => {
+
+      if (matricula == aluno.matricula) {
+        this.listaAlunos.splice(index, 1)
+      }
     })
   }
 

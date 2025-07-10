@@ -5,6 +5,7 @@
     <th>E-mail</th>
     <th>Curso</th>
     <th>Status</th>
+    <th>Ações</th>
   </tr>
   <tr *ngFor="let aluno of lista">
     <td>{{ aluno.matricula }}</td>
@@ -12,6 +13,10 @@
     <td>{{ aluno.email }}</td>
     <td>{{ aluno.cursos}}</td>
     <td>{{ aluno.cadastro ? "Aprovado" : "Reprovado" }}</td>
+    <td>
+      <button class="btn btn-green">Editar</button>
+      <button class="btn btn-red" (click)="excluirAluno(aluno.matricula)">Excluir</button>
+    </td>
   </tr>
 </table>
 

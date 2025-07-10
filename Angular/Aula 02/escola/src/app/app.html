@@ -20,7 +20,10 @@
   </section>
 
   <section class="lista" *ngIf="exibicao == 'lista'">
-    <app-aluno-lista [lista]="listaFiltrada"></app-aluno-lista>
+    <app-aluno-lista
+      [lista]="listaFiltrada"
+      (excluir)="onExcluir($event)"
+    ></app-aluno-lista>
   </section>
 </main>
 
