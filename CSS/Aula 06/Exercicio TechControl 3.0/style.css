@@ -2,8 +2,12 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.row {
+  margin: 100px;
+}
+
 .container-form {
-  height: 100vh;
+  max-height: 500px;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
@@ -19,7 +23,7 @@
   padding: 16px 0;
 }
 
-.logo > p {
+.logo p {
   font-size: 48px;
   font-weight: 500;
   margin-bottom: 0;
@@ -79,7 +83,7 @@ input::placeholder {
   background-color: #EFEDED;
 }
 
-.container-side > p {
+.container-side p {
   width: 100%;
   padding: 24px;
   text-align: center;
@@ -92,4 +96,21 @@ input::placeholder {
 
 .container-side > img {
   width: 250px;
+}
+
+.cadastro {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.cadastro span, a {
+  font-size: 10px;
+  color: #FFF;
+}
+
+.cadastro a:hover {
+  color: #ac7300;
 }

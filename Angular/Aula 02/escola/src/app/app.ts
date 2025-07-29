@@ -20,7 +20,8 @@ export class App {
       email: "luis@proway.com",
       cadastro: true,
       cursos: ["HTML", "CSS", "Javascript"],
-      notas: [5,9,2]
+      notas: [5,9,2],
+      status: true
     },
     {
       image: "assets/images/avatar1.png",
@@ -29,7 +30,8 @@ export class App {
       email: "fabio@proway.com",
       cadastro: false,
       cursos: ["Java"],
-      notas: [10,9,8]
+      notas: [10,9,8],
+      status: true
     },
     {
       image: "assets/images/avatar2.png",
@@ -38,7 +40,8 @@ export class App {
       email: "chris@proway.com",
       cadastro: true,
       cursos: ["Postgres"],
-      notas: [7,8,9]
+      notas: [7,8,9],
+      status: true
     },
     {
       image: "assets/images/avatar2.png",
@@ -47,7 +50,8 @@ export class App {
       email: "maria@proway.com",
       cadastro: false,
       cursos: ["Python"],
-      notas: [7,6,7]
+      notas: [7,6,7],
+      status: true
     }
   ];
 
