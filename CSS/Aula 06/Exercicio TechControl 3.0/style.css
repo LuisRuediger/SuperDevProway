@@ -1,17 +1,38 @@
+:root {
+  --primary: #213E60;
+  --secondary: #E69C3A;
+
+  --bg: #F4F2EF;
+
+  --text-primary: #333333;
+  --text-secondary: #ECE7E2;
+  --text-hover: #bd830e;
+
+  --white: #FFF;
+}
+
 * {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+  background-color: var(--bg);
+}
+
 .row {
   margin: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container-form {
-  max-height: 500px;
+  max-width: 500px;
+  padding: 36px;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-  background-color: #063C72;
+  background-color: var(--primary);
   color: #FFF;
 }
 
@@ -20,7 +41,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 16px 0;
+  padding-bottom: 20px;
 }
 
 .logo p {
@@ -39,11 +60,11 @@ input {
   width: 100%;
   border: none;
   outline: none;
-  background-color: #063C72;
+  background-color: var(--primary);
 }
 
 input::placeholder {
-  color: #1361ae;
+  color: #5779a0;
 }
 
 .email {
@@ -64,23 +85,25 @@ input::placeholder {
   margin-top: 48px;
   border-radius: 4px;
   border: none;
-  background-color: #D99100;
-  color: #FFF;
+  background-color: var(--secondary);
+  color: var(--white);
   transition: all ease 0.2s;
 }
 
 .button-login:hover {
-  background-color: #ac7300;
+  background-color: var(--text-hover);
 }
 
 .container-side {
+  max-width: 500px;
   padding: 36px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
   gap: 48px;
-  background-color: #EFEDED;
+  background-color: var(--white);
+  border-left: 8px solid var(--secondary);
 }
 
 .container-side p {
@@ -90,8 +113,8 @@ input::placeholder {
   font-size: 24px;
   font-weight: 500;
   letter-spacing: 4px;
-  background-color: #D99100;
-  color: #FFF;
+  background-color: var(--secondary);
+  color: var(--white);
 }
 
 .container-side > img {
@@ -99,7 +122,7 @@ input::placeholder {
 }
 
 .cadastro {
-  margin-top: 8px;
+  margin-top: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,9 +131,9 @@ input::placeholder {
 
 .cadastro span, a {
   font-size: 10px;
-  color: #FFF;
+  color: var(--white);
 }
 
 .cadastro a:hover {
-  color: #ac7300;
+  color: var(--text-hover);
 }
