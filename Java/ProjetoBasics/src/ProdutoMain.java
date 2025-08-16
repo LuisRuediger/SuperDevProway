@@ -2,18 +2,13 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainProduto {
+public class ProdutoMain {
     public static void main(String[] args) {
 
         // Aplicando conceito de CRUD em List
 
-        // C - Create
-
-
-        // Criando a lista do tipo 'Produto'
-        List<Produto> produtoList = new ArrayList<>();
-
-        int sequenciaCodigos = 1;
+        // Instanciar o serviço da ProdutoService
+        ProdutoService service = new ProdutoService();
 
         int opcao = 999;
         String menu = "*** Menu Produto ***\n" +
@@ -31,14 +26,14 @@ public class MainProduto {
                 case 1:
                     String relatorioProdutos = "Código        Nome                   Valor\n";
 
-                    for (Produto produto : produtoList) {
+                    for (Produto produto : service.getListaProduto()) {
                         relatorioProdutos +=
                                 produto.getCodigo() + "                  " +
                                 produto.getNome() + "                    " +
                                 produto.getValor() + "\n";
                     }
 
-                    if (produtoList.isEmpty()) {
+                    if (service.getListaProduto().isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Sem produtos cadastrados.");
                     } else {
                         JOptionPane.showMessageDialog(null, relatorioProdutos);
@@ -47,13 +42,7 @@ public class MainProduto {
                 case 2:
                     int codigoBusca = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do produto"));
 
-                    Produto produtoEncontrado = null;
-
-                    for (Produto produto : produtoList) {
-                        if (codigoBusca == produto.getCodigo()) {
-                            produtoEncontrado = produto;
-                        }
-                    }
+                    Produto produtoEncontrado = service.getProdutoPorCodigo(codigoBusca);
 
                     if (produtoEncontrado == null) {
                         JOptionPane.showMessageDialog(null,
@@ -69,39 +58,56 @@ public class MainProduto {
 
                     break;
                 case 3:
-                    Produto novoProduto = new Produto();
-
-                    novoProduto.setCodigo(sequenciaCodigos);
-                    sequenciaCodigos++;
-
-                    novoProduto.setNome(JOptionPane.showInputDialog("Digite o nome do produto"));
-
+                    String novoNome = JOptionPane.showInputDialog("Digite o nome do produto");
                     double novoValor = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do produto"));
+
+                    Produto novoProduto = new Produto();
+                    novoProduto.setNome(novoNome);
                     novoProduto.setValor(novoValor);
 
-                    produtoList.add(novoProduto);
+                    service.addProduto(novoProduto);
+
+                    JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso");
+
+                    break;
+                case 4:
+                    int codigoAlterar = Integer.parseInt(JOptionPane.showInputDialog("Digite o codigo do produto que deseja alterar"));
+
+                    Produto produtoAlterar = service.getProdutoPorCodigo(codigoAlterar);
+
+                    if (produtoAlterar == null) {
+                        JOptionPane.showMessageDialog(null, "Produto não encontrado para o código: " + codigoAlterar);
+                    } else {
+                        String mensagemAlterar = "Produto encontrado!\n" +
+                                "\nNome: " + produtoAlterar.getNome() +
+                                "\nValor: " + produtoAlterar.getValor();
+                        JOptionPane.showMessageDialog(null, mensagemAlterar);
+
+                        String nomeAlterar = JOptionPane.showInputDialog("Digite o novo nome para o produto");
+                        double valorAlterar = Double.parseDouble(JOptionPane.showInputDialog("Digite o novo valor"));
+
+                        service.updateProduto(codigoAlterar, nomeAlterar, valorAlterar);
+
+                        JOptionPane.showMessageDialog(
+                                null,
+                                "Produto " + produtoAlterar.getNome() + "Alterado com sucesso!"
+                                );
+
+                    }
 
                     break;
                 case 5:
-                    int codigoExclusao = Integer.parseInt(JOptionPane.showInputDialog("Digite o códio para excluir"));
+                    int codigoExclusao = Integer.parseInt(JOptionPane.showInputDialog("Digite o código para excluir"));
 
-                    Produto produtoExcluir = null;
+                    boolean isExclusao = service.deleteProduto(codigoExclusao);
 
-                    for (Produto produto : produtoList) {
-                        if (codigoExclusao == produto.getCodigo()) {
-                            produtoExcluir = produto;
-                        }
-                    }
-
-                    if (produtoExcluir == null) {
+                    if (!isExclusao) {
                         JOptionPane.showMessageDialog(null,
                                 "Produto não encontrado para o código" + codigoExclusao);
                     } else {
-                        produtoList.remove(produtoExcluir);
                         JOptionPane.showMessageDialog(null,
                                 "Produto excluido com sucesso!");
                     }
-
 
                     break;
                 case 0:
