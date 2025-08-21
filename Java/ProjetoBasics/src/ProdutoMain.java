@@ -14,17 +14,19 @@ public class ProdutoMain {
         String menu = "*** Menu Produto ***\n" +
                 "\n[1] Listar todos" +
                 "\n[2] Buscar por código" +
-                "\n[3] Adicionar novo" +
+                "\n[3] Adicionar novo" + // validar a categoria do produto (se software ou hardware)
                 "\n[4] Alterar" +
                 "\n[5] Excluir" +
                 "\n[0] Sair";
+                // outra opção para listar apenas software
+                // outr opção para listas apenas hardware
 
         while (opcao != 0) {
             opcao = Integer.parseInt(JOptionPane.showInputDialog(menu));
 
             switch (opcao) {
                 case 1:
-                    String relatorioProdutos = "Código        Nome                   Valor\n";
+                    String relatorioProdutos = "Código        Nome                   Valor                Categoria\n";
 
                     for (Produto produto : service.getListaProduto()) {
                         relatorioProdutos +=
@@ -58,8 +60,37 @@ public class ProdutoMain {
 
                     break;
                 case 3:
+                    String categoria = JOptionPane.showInputDialog(
+                            "Qual a categoria do produto\n" +
+                                    "Hardware ou Software?"
+                    );
                     String novoNome = JOptionPane.showInputDialog("Digite o nome do produto");
                     double novoValor = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do produto"));
+
+                    if (categoria.equalsIgnoreCase("Software")) {
+                        ProdutoSoftware software = new ProdutoSoftware();
+                        software.setNome(novoNome);
+                        software.setValor(novoValor);
+                        software.setCategoria(categoria);
+
+                        String versao = JOptionPane.showInputDialog("Qual a versãa?");
+                        software.setVersao(versao);
+
+                        service.addProduto(software);
+                    } else if (categoria.equalsIgnoreCase("Hardware")) {
+                        ProdutoHardware hardware = new ProdutoHardware();
+
+                        hardware.setNome(novoNome);
+                        hardware.setValor(novoValor);
+
+                        int quantidade = Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade?"));
+                        hardware.setQuantidade(quantidade);
+
+                        service.addProduto(hardware);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Opção inválida!");
+                        break;
+                    }
 
                     Produto novoProduto = new Produto();
                     novoProduto.setNome(novoNome);

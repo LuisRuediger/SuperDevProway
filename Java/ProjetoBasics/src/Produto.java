@@ -1,25 +1,35 @@
 public class Produto {
 
     // Atributos
+
     private int codigo;
     private Double valor;
     private String nome;
-    private int quantidade;
     private boolean status;
+    private String marca;
+    private String categoria;
 
 
     // Construtores
-    public Produto () {
 
+    // Vazio
+    public Produto () {
     }
 
-    public Produto (double valor, int quantidade) {
+    // Exigindo somente valor inicial para o atributo 'nome'
+    public Produto (String nome) {
+        this.nome = nome;
+    }
+
+    // Exigindo valor inicial para os atributos 'nome' e 'valor'
+    public Produto (String nome, Double valor) {
+        this.nome = nome;
         this.valor = valor;
-        this.quantidade = quantidade;
     }
 
 
     // Métodos Get / Set
+
     public int getCodigo() {
         return codigo;
     }
@@ -44,19 +54,27 @@ public class Produto {
         this.nome = nome;
     }
 
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
     public boolean isStatus() {
         return status;
     }
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 }
