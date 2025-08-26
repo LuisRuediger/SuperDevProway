@@ -1,0 +1,22 @@
+-- Criando a tabela PRODUTO
+
+CREATE TABLE produto (
+	codigo INTEGER PRIMARY KEY,
+	descricao VARCHAR(50) NOT NULL,
+	preco NUMERIC(6,2)
+);
+
+-- Buscar dados da tabela PRODUTO
+
+SELECT * FROM produto;
+
+-- Alterando a tabela PRODUTO
+
+-- Excluir uma coluna
+ALTER TABLE produto DROP COLUMN descricao;
+
+-- Inserindo uma coluna nova
+ALTER TABLE produto ADD COLUMN categoria VARCHAR(50);
+
+-- Excluir a tabela PRODUTO
+DROP TABLE produto;

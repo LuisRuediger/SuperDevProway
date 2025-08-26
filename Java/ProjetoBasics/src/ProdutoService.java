@@ -9,7 +9,7 @@ public class ProdutoService {
     // Cria um contador para sequencia de código
     int sequenciaCodigos = 1;
 
-    // Construtur principal da classe de serviço
+    // Construtor principal da classe de serviço
     // Ao gerar um objeto dessa classe, a propriedade recebe uma nova lista
     ProdutoService () {
         this.listaProduto = new ArrayList<>();
@@ -24,7 +24,7 @@ public class ProdutoService {
     // Adicionar um novo produto na lista
     public void addProduto (Produto novoProduto) {
         novoProduto.setCodigo(this.sequenciaCodigos);
-        this.sequenciaCodigos =+ 1;
+        this.sequenciaCodigos += 1;
         this.listaProduto.add(novoProduto);
     }
 
