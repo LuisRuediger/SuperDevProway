@@ -1,0 +1,11 @@
+-- Entendendo SELECT
+SELECT 
+	-- Nomes dos campos ou colunas
+	descricao, categoria
+FROM 
+	-- Nome da tabela(s)
+	produto
+WHERE 
+	-- Condições
+	categoria = 'monitor'
+	AND codigo > 1
