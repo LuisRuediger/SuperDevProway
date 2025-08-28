@@ -1,0 +1,37 @@
+-- Entendendo BETWEEN
+SELECT 
+	-- Nomes dos campos ou colunas
+	nome, salario
+FROM 
+	-- Nome da tabela(s)
+	funcionario
+WHERE 
+	-- Condições
+	salario BETWEEN 1000 AND 2000
+
+
+-- Entendendo LIKE
+SELECT
+	*
+FROM
+	funcionario
+WHERE
+	-- % quer dizer qualquer caracter (Tipo *), nesse caso retorna qualquer nome que termine com 'a'
+	nome LIKE '%a'
+
+
+-- LIKE sem case sensitive
+SELECT
+	*
+FROM
+	funcionario
+WHERE
+	nome ILIKE 'luiz'
+
+	
+SELECT
+	*
+FROM
+	funcionario
+WHERE
+	UPPER(nome) = UPPER('LUIZ')
