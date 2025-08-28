@@ -1,0 +1,34 @@
+-- Inserir registros na tabela funcionario
+INSERT INTO funcionario
+	(codigo, nome, salario, departamento)
+VALUES
+	(1, 'Luiz', 1450, 'Compras'),
+	(2, 'Bruno', 1800, 'Compras'),
+	(3, 'Camila', 1550, 'Compras'),
+	(4, 'João', 2500, 'Recursos Humanos'),
+	(5, 'Ana', 3800, 'Tecnologia'),
+	(6, 'Katia', 2750, 'Compras'),
+	(7, 'Marcelo', 1950, 'Vendas'),
+	(8, 'Geovana', 2650, 'Tecnologia'),
+	(9, 'Patrícia', 3000, 'Tecnologia'),
+	(10, 'Pedro', 2450, 'Vendas');
+
+
+-- Altera valor dos salarios de acordo com o departamento
+UPDATE funcionario
+SET salario = salario + 150
+WHERE departamento = 'Compras';
+
+UPDATE funcionario
+SET salario = salario + 100
+WHERE departamento = 'Vendas';
+
+UPDATE funcionario
+SET salario = salario + 250
+WHERE departamento = 'Recursos Humanos';
+
+UPDATE funcionario
+SET salario = salario + 200
+WHERE departamento = 'Tecnologia';
+
+SELECT * FROM funcionario
