@@ -1,0 +1,18 @@
+-- Inserindo registro na tabela
+INSERT INTO produto
+	(codigo, descricao, categoria)
+VALUES
+	(4, 'Monitor Philips', 'Periférico');
+
+
+-- Atualizando registro na tabela
+UPDATE produto
+SET descricao = 'Monitor Philips'
+WHERE codigo = 2;
+
+
+-- Remover registro da tabela
+DELETE FROM produto
+WHERE categoria = 'Periférico'
+
+select * from produto
