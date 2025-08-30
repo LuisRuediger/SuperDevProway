@@ -1,0 +1,40 @@
+CREATE TABLE categoria (
+	codigo SERIAL,
+	descricao VARCHAR(100) NOT NULL,
+	CONSTRAINT pk_categoria PRIMARY KEY (codigo)
+);
+
+INSERT INTO categoria 
+	(descricao)
+VALUES 
+	('Hardware'),('Software'),('Eletrodoméstico');
+
+CREATE TABLE produto (
+	codigo SERIAL,
+	descricao VARCHAR(50) NOT NULL,
+	preco NUMERIC(6,2),
+	codigo_categoria INTEGER NOT NULL,
+	CONSTRAINT pk_produto PRIMARY KEY (codigo),
+	CONSTRAINT fk_produto_categoria FOREIGN KEY (codigo_categoria) REFERENCES categoria (codigo)
+);
+
+INSERT INTO produto
+	(codigo, descricao, preco, codigo_categoria)
+VALUES
+	(default, 'Ar condicionado LG', 5800, 3),
+	(default, 'Ar condicionado Samsung', 7500, 3),
+	(default, 'SSD 256', 250, 1),
+	(default, 'SSD 512', 250, 1),
+	(default, 'Microsoft Office Word', 790, 2),
+	(default, 'Microsoft Office Excel', 790, 2);
+
+-- Unir tabelas com WHERE
+
+SELECT 
+	p.descricao AS "Produto", 
+	p.preco AS "Preço", 
+	c.descricao AS "Categoria"
+FROM
+	produto p, categoria c
+WHERE
+	p.codigo_categoria = c.codigo
