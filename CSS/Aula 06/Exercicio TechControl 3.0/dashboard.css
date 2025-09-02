@@ -24,8 +24,12 @@ html, body {
   overflow: hidden;
 }
 
+.dashboard-container {
+  display: flex;
+}
+
 .sidebar {
-  max-width: 20vw;
+  width: 20vw;
   color: var(--text-secondary);
 }
 
@@ -75,3 +79,64 @@ html, body {
   color: var(--text-secondary);
   cursor: pointer;
 }
+
+.dashboard {
+  border: solid 1px red;
+  width: 100%;
+  background-color: var(--bg);
+}
+
+.dashboard .nav {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  background-color: var(--white);
+}
+
+.nav .nav-button {
+  width: fit-content;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  color: var(--text-primary);
+  background-color: var(--bg);
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.cards .card {
+  width: 300px;
+  margin: 16px;
+  padding: 12px 8px;
+  color: var(--text-primary);
+  background-color: var(--white);
+  border-left: 6px solid var(--secondary);
+  box-shadow: -1px 4px 9px -1px rgba(0,0,0,0.44);
+}
+
+.card span {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.card p {
+  padding: 18px;
+  font-size: 52px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+/* .card .estoque {
+  font-size: 48px;
+  letter-spacing: 0px;
+} */
