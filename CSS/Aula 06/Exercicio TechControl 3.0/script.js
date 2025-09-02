@@ -25,19 +25,18 @@ function cadastroUsuario() {
   setUserToLocalStorage(newUser);  
 }
 
-function validarLogin() {
+function validarLogin(event) {
+  event.preventDefault();
+
   const email = document.getElementById('email').value;
-  const senha = document.getElementById('senha').value;
+  const senha = document.getElementById('passsword').value;
   const lista = getUsersFromLocalStorage();
 
   const usuarioCadastrado = lista.find(usuario => usuario.email === email && usuario.senha === senha);
  
-  console.log(usuarioCadastrado);
-  
-
-  // if (usuarioCadastrado) {
-  //   console.log("acertou");
-  // } else {
-  //   console.log("seu burro");
-  // }
+  if (usuarioCadastrado) {
+    window.location.href = 'dashboard.html';
+  } else {
+    alert('Usuário não cadastrado!');
+  }
 }
