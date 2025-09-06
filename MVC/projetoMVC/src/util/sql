@@ -1,0 +1,9 @@
+CREATE TABLE produto (
+	codigo SERIAL,
+	descricao VARCHAR(50) NOT NULL,
+	preco NUMERIC(6,2),
+	status BOOLEAN,
+	CONSTRAINT pk_produto PRIMARY KEY (codigo)
+);
+
+
