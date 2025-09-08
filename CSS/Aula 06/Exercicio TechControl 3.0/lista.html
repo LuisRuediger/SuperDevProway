@@ -136,7 +136,7 @@
             <div class="row">
               <div class="col-sm-4">
                 <label for="codigo" class="col-form-label">Código</label>
-                <input type="number" class="form-control" id="codigo">
+                <input type="number" class="form-control" id="codigo" readonly>
               </div>
               <div class="col-sm-8">
                 <label for="descricao" class="col-form-label">Descrição</label>
@@ -161,49 +161,12 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Salvar</button>
+          <button type="button" class="btn btn-primary salvar">Salvar</button>
         </div>
       </div>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.querySelector('.btn-primary').addEventListener('click', () => {
-      const codigo = document.getElementById('codigo').value;
-      const descricao = document.getElementById('descricao').value;
-      const estoque = document.getElementById('estoque').value;
-      const valor = document.getElementById('valor').value;
-      const categoria = document.getElementById('categoria').value;
-
-      if (codigo && descricao && estoque && valor && categoria) {
-        const novoProduto = { codigo, descricao, estoque, valor, categoria };
-
-        // Recupera os produtos existentes no localStorage
-        const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
-
-        // Adiciona o novo produto
-        produtos.push(novoProduto);
-
-        // Salva de volta no localStorage
-        localStorage.setItem('produtos', JSON.stringify(produtos));
-
-        // Limpa o formulário
-        document.getElementById('codigo').value = '';
-        document.getElementById('descricao').value = '';
-        document.getElementById('estoque').value = '';
-        document.getElementById('valor').value = '';
-        document.getElementById('categoria').value = '';
-
-        // Fecha o modal
-        const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
-        modal.hide();
-
-        alert('Produto adicionado com sucesso!');
-      } else {
-        alert('Por favor, preencha todos os campos.');
-      }
-    });
-  </script>
-</body>
+  <script src="./script.js"></script>
 </html>
