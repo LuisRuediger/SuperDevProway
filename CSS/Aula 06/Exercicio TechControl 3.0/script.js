@@ -41,7 +41,6 @@ function validarLogin(event) {
   }
 }
 
-
 document.getElementById('exampleModal').addEventListener('show.bs.modal', () => {
   let ultimoCodigo = parseInt(localStorage.getItem('ultimoCodigo')) || 0;
   document.getElementById('codigo').value = ultimoCodigo + 1;
@@ -53,14 +52,11 @@ document.querySelector('.salvar').addEventListener('click', () => {
   const valor = document.getElementById('valor').value;
   const categoria = document.getElementById('categoria').value;
 
-    let ultimoCodigo = parseInt(localStorage.getItem('ultimoCodigo')) || 0;    
-
-    const codigo = ++ultimoCodigo;
+  let ultimoCodigo = parseInt(localStorage.getItem('ultimoCodigo')) || 0;    
+  const codigo = ++ultimoCodigo;
 
   if (descricao && estoque && valor && categoria) {
-    
     const novoProduto = { codigo, descricao, estoque, valor, categoria };
-
     const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
 
     produtos.push(novoProduto);
@@ -77,7 +73,43 @@ document.querySelector('.salvar').addEventListener('click', () => {
     modal.hide();
 
     alert('Produto adicionado com sucesso!');
+
+    listarProdutos();
   } else {
     alert('Por favor, preencha todos os campos.');
   }
 });
+
+function listarProdutos() {
+  const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+  const tbody = document.querySelector('table tbody');
+
+  tbody.innerHTML = '';
+
+  produtos.forEach(produto => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <th scope="row">${produto.codigo}</th>
+      <td>${produto.descricao}</td>
+      <td>${produto.estoque}</td>
+      <td>R$ ${parseFloat(produto.valor).toFixed(2)}</td>
+      <td>${produto.categoria}</td>
+      <td>
+        <div class="btn-group">
+          <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Editar item
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Editar</a></li>
+            <li><a class="dropdown-item" href="#">Excluir</a></li>
+            <li><a class="dropdown-item" href="#">Vender</a></li>
+            <li><a class="dropdown-item" href="#">Comprar</a></li>
+          </ul>
+        </div>
+      </td>
+    `;
+    tbody.appendChild(row);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', listarProdutos);
