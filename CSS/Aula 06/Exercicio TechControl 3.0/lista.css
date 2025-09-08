@@ -1,0 +1,159 @@
+:root {
+  --primary-700: #192f48;
+  --primary-500: #213E60;
+  --secondary: #E69C3A;
+
+  --bg: #F4F2EF;
+
+  --text-primary: #333333;
+  --text-secondary: #ECE7E2;
+  --text-hover: #bd830e;
+
+  --white: #FFF;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.dashboard-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 20vw;
+  color: var(--text-secondary);
+}
+
+.perfil {
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--primary-700);
+}
+
+.perfil img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+.perfil p {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.perfil span {
+  margin-top: 4px;
+  font-size: 10px;
+}
+
+.navegacao {
+  height: 100vh;
+  padding: 32px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  background-color: var(--primary-500);
+}
+
+.navegacao button {
+  background: none;
+  text-align: start;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.dashboard {
+  width: 100%;
+  background-color: var(--bg);
+}
+
+.dashboard .nav {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  background-color: var(--white);
+}
+
+.nav .nav-button {
+  width: fit-content;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  color: var(--text-primary);
+  background-color: var(--text-secondary);
+}
+
+.lista {
+  margin: 24px;
+  padding: 36px 16px;
+  background-color: var(--white);
+  box-shadow: -1px 4px 9px -1px rgba(0,0,0,0.44);
+}
+
+.lista h2 {
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.lista div {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.lista button {
+  font-size: 14px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-500);
+  color: var(--text-secondary);
+}
+
+.lista button:hover {
+  background-color: var(--primary-700);
+}
+
+.lista table {
+  color: var(--text-primary);
+}
+
+.lista thead {
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+.lista .btn-group {
+  width: fit-content;
+}
+
+tr td:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
