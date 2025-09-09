@@ -41,45 +41,56 @@ function validarLogin(event) {
   }
 }
 
-document.getElementById('exampleModal').addEventListener('show.bs.modal', () => {
-  let ultimoCodigo = parseInt(localStorage.getItem('ultimoCodigo')) || 0;
-  document.getElementById('codigo').value = ultimoCodigo + 1;
-});
+// gerar codigo unico para itens da lista
+const modal = document.getElementById('exampleModal');
+if (modal) {
+  modal.addEventListener('show.bs.modal', () => {
+    let ultimoCodigo = parseInt(localStorage.getItem('ultimoCodigo')) || 0;
+    document.getElementById('codigo').value = ultimoCodigo + 1;
+  });
+}
 
-document.querySelector('.salvar').addEventListener('click', () => {
-  const descricao = document.getElementById('descricao').value;
-  const estoque = document.getElementById('estoque').value;
-  const valor = document.getElementById('valor').value;
-  const categoria = document.getElementById('categoria').value;
 
-  let ultimoCodigo = parseInt(localStorage.getItem('ultimoCodigo')) || 0;    
-  const codigo = ++ultimoCodigo;
+// add item na lista
+const salvar = document.querySelector('.salvar');
+if(salvar) {
+  salvar.addEventListener('click', () => {
+    const descricao = document.getElementById('descricao').value;
+    const estoque = document.getElementById('estoque').value;
+    const valor = document.getElementById('valor').value;
+    const categoria = document.getElementById('categoria').value;
+  
+    let ultimoCodigo = parseInt(localStorage.getItem('ultimoCodigo')) || 0;    
+    const codigo = ++ultimoCodigo;
+  
+    if (descricao && estoque && valor && categoria) {
+      const novoProduto = { codigo, descricao, estoque, valor, categoria };
+      const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+  
+      produtos.push(novoProduto);
+  
+      localStorage.setItem('produtos', JSON.stringify(produtos));
+      localStorage.setItem('ultimoCodigo', codigo);
+  
+      document.getElementById('descricao').value = '';
+      document.getElementById('estoque').value = '';
+      document.getElementById('valor').value = '';
+      document.getElementById('categoria').value = '';
+  
+      const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
+      modal.hide();
+  
+      alert('Produto adicionado com sucesso!');
+  
+      listarProdutos();
+    } else {
+      alert('Por favor, preencha todos os campos.');
+    }
+  });
+}
 
-  if (descricao && estoque && valor && categoria) {
-    const novoProduto = { codigo, descricao, estoque, valor, categoria };
-    const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
 
-    produtos.push(novoProduto);
-
-    localStorage.setItem('produtos', JSON.stringify(produtos));
-    localStorage.setItem('ultimoCodigo', codigo);
-
-    document.getElementById('descricao').value = '';
-    document.getElementById('estoque').value = '';
-    document.getElementById('valor').value = '';
-    document.getElementById('categoria').value = '';
-
-    const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
-    modal.hide();
-
-    alert('Produto adicionado com sucesso!');
-
-    listarProdutos();
-  } else {
-    alert('Por favor, preencha todos os campos.');
-  }
-});
-
+// listar todos os produtos
 function listarProdutos() {
   const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
   const tbody = document.querySelector('table tbody');
@@ -113,7 +124,6 @@ function listarProdutos() {
 }
 
 // Editar item
-
 function editarProduto(codigo) {
   const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
   const produto = produtos.find(produto => produto.codigo === codigo);
@@ -144,7 +154,6 @@ function editarProduto(codigo) {
 }
 
 // Excluir item
-
 function excluirProduto(codigo) {
   const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
   const novosProdutos = produtos.filter(produto => produto.codigo !== codigo);
@@ -157,7 +166,6 @@ function excluirProduto(codigo) {
 }
 
 // Vender item
-
 function venderProduto(codigo) {
   const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
   const produto = produtos.find(produto => produto.codigo === codigo);
@@ -190,7 +198,6 @@ function venderProduto(codigo) {
 }
 
 // Comprar item
-
 function comprarProduto(codigo) {
   const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
   const produto = produtos.find(produto => produto.codigo === codigo);
@@ -220,5 +227,46 @@ function comprarProduto(codigo) {
     };
   }
 }
+
+// Dashboard //
+
+const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+
+// Quantidade total do estoque
+const cardQuantidadeEstoque = document.getElementById('quantidaeEstoque');
+
+if (cardQuantidadeEstoque) {
+  let quantidadeTotalEstoque = 0;
+  
+  produtos.forEach(produto => {
+    quantidadeTotalEstoque += parseInt(produto.estoque);
+    console.log(quantidadeTotalEstoque);
+  })
+
+  cardQuantidadeEstoque.innerText = quantidadeTotalEstoque;
+}
+
+// Valor total do estoque
+const cardValorEstoque = document.getElementById('valorEstoque');
+
+if (cardValorEstoque) {
+  let valorTotalEstoque = 0;
+  
+  produtos.forEach(produto => {
+    valorTotalEstoque += parseInt(produto.valor);
+  })
+
+  cardValorEstoque.innerText = valorTotalEstoque.toFixed(2);
+}
+
+// Atualizar card produtos cadastrados
+const cardProdutosCadastrados = document.getElementById('produtosCadastrados');
+if (cardProdutosCadastrados) {
+  cardProdutosCadastrados.innerText = produtos.length;
+}
+
+
+
+// console.log(produtosCadastrados)
 
 document.addEventListener('DOMContentLoaded', listarProdutos);
