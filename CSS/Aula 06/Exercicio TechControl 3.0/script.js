@@ -97,11 +97,11 @@ function listarProdutos() {
       <td>
         <div class="btn-group">
           <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Editar item
+            Ações
           </button>
           <ul class="dropdown-menu">
             <li><a onClick="editarProduto(${produto.codigo})" class="dropdown-item" href="#">Editar</a></li>
-            <li><a class="dropdown-item" href="#">Excluir</a></li>
+            <li><a onClick="excluirProduto(${produto.codigo})" class="dropdown-item" href="#">Excluir</a></li>
             <li><a class="dropdown-item" href="#">Vender</a></li>
             <li><a class="dropdown-item" href="#">Comprar</a></li>
           </ul>
@@ -141,6 +141,19 @@ function editarProduto(codigo) {
       alert('Produto atualizado com sucesso!');
     };
   }
+}
+
+function excluirProduto(codigo) {
+  const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+  const novosProdutos = produtos.filter(produto => produto.codigo !== codigo);
+
+  // Atualiza o localStorage com a lista filtrada
+  localStorage.setItem('produtos', JSON.stringify(novosProdutos));
+
+  // Atualiza a tabela
+  listarProdutos();
+
+  alert('Produto excluído com sucesso!');
 }
 
 document.addEventListener('DOMContentLoaded', listarProdutos);
