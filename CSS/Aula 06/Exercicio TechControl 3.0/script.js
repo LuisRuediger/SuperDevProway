@@ -102,7 +102,7 @@ function listarProdutos() {
           <ul class="dropdown-menu">
             <li><a onClick="editarProduto(${produto.codigo})" class="dropdown-item" href="#">Editar</a></li>
             <li><a onClick="excluirProduto(${produto.codigo})" class="dropdown-item" href="#">Excluir</a></li>
-            <li><a class="dropdown-item" href="#">Vender</a></li>
+            <li><a onClick="venderProduto(${produto.codigo})" class="dropdown-item" href="#">Vender</a></li>
             <li><a class="dropdown-item" href="#">Comprar</a></li>
           </ul>
         </div>
@@ -143,17 +143,50 @@ function editarProduto(codigo) {
   }
 }
 
+// Excluir item
+
 function excluirProduto(codigo) {
   const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
   const novosProdutos = produtos.filter(produto => produto.codigo !== codigo);
 
-  // Atualiza o localStorage com a lista filtrada
   localStorage.setItem('produtos', JSON.stringify(novosProdutos));
 
-  // Atualiza a tabela
   listarProdutos();
 
   alert('Produto excluído com sucesso!');
+}
+
+// Vender item
+
+function venderProduto(codigo) {
+  const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+  const produto = produtos.find(produto => produto.codigo === codigo);
+
+  if (produto) {
+    document.getElementById('sellCodigo').value = produto.codigo;
+
+    const sellModal = new bootstrap.Modal(document.getElementById('sellModal'));
+    sellModal.show();
+
+    document.querySelector('.confirmar-venda').onclick = () => {
+      const quantidade = parseInt(document.getElementById('sellQuantidade').value);
+
+      if (quantidade > 0 && quantidade <= produto.estoque) {
+        const valorPorUnidade = parseFloat(produto.valor) / produto.estoque;
+
+        produto.estoque -= quantidade;
+        produto.valor = (produto.estoque * valorPorUnidade).toFixed(2);
+
+        localStorage.setItem('produtos', JSON.stringify(produtos));
+
+        sellModal.hide();
+        listarProdutos();
+        alert(`Venda realizada com sucesso! Quantidade vendida: ${quantidade}, Valor total da venda: R$ ${(quantidade * valorPorUnidade).toFixed(2)}`);
+      } else {
+        alert('Quantidade inválida! Verifique o estoque disponível.');
+      }
+    };
+  }
 }
 
 document.addEventListener('DOMContentLoaded', listarProdutos);
