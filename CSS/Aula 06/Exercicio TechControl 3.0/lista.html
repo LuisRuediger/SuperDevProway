@@ -167,6 +167,50 @@
     </div>
   </div>
 
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Editar Produto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
+                <label for="editCodigo" class="col-form-label">Código</label>
+                <input type="number" class="form-control" id="editCodigo" readonly>
+              </div>
+              <div class="col-sm-8">
+                <label for="editDescricao" class="col-form-label">Descrição</label>
+                <input type="text" class="form-control" id="editDescricao">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                <label for="editEstoque" class="col-form-label">Estoque</label>
+                <input type="number" class="form-control" id="editEstoque">
+              </div>
+              <div class="col-sm">
+                <label for="editValor" class="col-form-label">Valor</label>
+                <input type="number" class="form-control" id="editValor">
+              </div>
+              <div class="col-sm">
+                <label for="editCategoria" class="col-form-label">Categoria</label>
+                <input type="text" class="form-control" id="editCategoria">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary salvar-edicao">Salvar Alterações</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./script.js"></script>
 </html>

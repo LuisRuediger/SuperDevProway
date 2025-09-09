@@ -100,7 +100,7 @@ function listarProdutos() {
             Editar item
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Editar</a></li>
+            <li><a onClick="editarProduto(${produto.codigo})" class="dropdown-item" href="#">Editar</a></li>
             <li><a class="dropdown-item" href="#">Excluir</a></li>
             <li><a class="dropdown-item" href="#">Vender</a></li>
             <li><a class="dropdown-item" href="#">Comprar</a></li>
@@ -110,6 +110,37 @@ function listarProdutos() {
     `;
     tbody.appendChild(row);
   });
+}
+
+// Editar item
+
+function editarProduto(codigo) {
+  const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+  const produto = produtos.find(produto => produto.codigo === codigo);
+
+  if (produto) {
+    document.getElementById('editCodigo').value = produto.codigo;
+    document.getElementById('editDescricao').value = produto.descricao;
+    document.getElementById('editEstoque').value = produto.estoque;
+    document.getElementById('editValor').value = produto.valor;
+    document.getElementById('editCategoria').value = produto.categoria;
+
+    const editModal = new bootstrap.Modal(document.getElementById('editModal'));
+    editModal.show();
+
+    document.querySelector('.salvar-edicao').onclick = () => {
+      produto.descricao = document.getElementById('editDescricao').value;
+      produto.estoque = document.getElementById('editEstoque').value;
+      produto.valor = document.getElementById('editValor').value;
+      produto.categoria = document.getElementById('editCategoria').value;
+
+      localStorage.setItem('produtos', JSON.stringify(produtos));
+
+      editModal.hide();
+      listarProdutos();
+      alert('Produto atualizado com sucesso!');
+    };
+  }
 }
 
 document.addEventListener('DOMContentLoaded', listarProdutos);

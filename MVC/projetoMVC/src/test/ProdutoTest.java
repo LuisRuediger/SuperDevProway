@@ -3,7 +3,7 @@ package test;
 import controller.ProdutoController;
 import model.Produto;
 
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 public class ProdutoTest {
 
