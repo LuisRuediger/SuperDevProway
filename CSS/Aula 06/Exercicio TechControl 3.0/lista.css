@@ -103,7 +103,7 @@ html, body {
   gap: 8px;
   border-radius: 4px;
   color: var(--text-primary);
-  background-color: var(--text-secondary);
+  background-color: var(--bg);
 }
 
 .lista {
