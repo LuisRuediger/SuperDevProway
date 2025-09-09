@@ -103,7 +103,7 @@ function listarProdutos() {
             <li><a onClick="editarProduto(${produto.codigo})" class="dropdown-item" href="#">Editar</a></li>
             <li><a onClick="excluirProduto(${produto.codigo})" class="dropdown-item" href="#">Excluir</a></li>
             <li><a onClick="venderProduto(${produto.codigo})" class="dropdown-item" href="#">Vender</a></li>
-            <li><a class="dropdown-item" href="#">Comprar</a></li>
+            <li><a onClick="comprarProduto(${produto.codigo})" class="dropdown-item" href="#">Comprar</a></li>
           </ul>
         </div>
       </td>
@@ -184,6 +184,38 @@ function venderProduto(codigo) {
         alert(`Venda realizada com sucesso! Quantidade vendida: ${quantidade}, Valor total da venda: R$ ${(quantidade * valorPorUnidade).toFixed(2)}`);
       } else {
         alert('Quantidade inválida! Verifique o estoque disponível.');
+      }
+    };
+  }
+}
+
+// Comprar item
+
+function comprarProduto(codigo) {
+  const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+  const produto = produtos.find(produto => produto.codigo === codigo);
+
+  if (produto) {
+    document.getElementById('buyCodigo').value = produto.codigo;
+
+    const buyModal = new bootstrap.Modal(document.getElementById('buyModal'));
+    buyModal.show();
+
+    document.querySelector('.confirmar-compra').onclick = () => {
+      const quantidade = parseInt(document.getElementById('buyQuantidade').value);
+      const valorUnitario = parseFloat(produto.valor) / parseInt(produto.estoque);
+
+      if (quantidade > 0) {
+        produto.estoque = parseInt(produto.estoque) + quantidade;
+        produto.valor = (produto.estoque * valorUnitario).toFixed(2);
+
+        localStorage.setItem('produtos', JSON.stringify(produtos));
+
+        buyModal.hide();
+        listarProdutos();
+        alert(`Compra realizada com sucesso! Quantidade comprada: ${quantidade}, Valor unitário do produto: R$ ${valorUnitario.toFixed(2)}`);
+      } else {
+        alert('Quantidade inválida! Insira um valor maior que zero.');
       }
     };
   }
