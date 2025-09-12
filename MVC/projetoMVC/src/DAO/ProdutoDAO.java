@@ -5,7 +5,9 @@ import util.ConnectionFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProdutoDAO implements GenericDAO {
@@ -23,12 +25,80 @@ public class ProdutoDAO implements GenericDAO {
 
     @Override
     public List<Object> getAll() {
-        return List.of();
+
+        List<Object> produtoList = new ArrayList<>();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String sql = "SELECT * FROM produto ORDER BY codigo";
+
+        try {
+            stmt = this.conn.prepareStatement(sql);
+            rs = stmt.executeQuery();
+
+            // rs.next() vai buscar o próximo registro encontrado no SELECT anterior
+            // para cada registro encontrado, será executado o bloco abaixo (Fica como true caso ainda  tenha linhas no select)
+            while (rs.next()){
+                // Declaro um objeto da classe Produto para ser populado com as informações do bacno
+                Produto produto = new Produto();
+
+                // Fazendo um match entre o nome da coluna no banco de dados com o nome do atributo
+                produto.setId(rs.getInt("codigo"));
+                produto.setDescricao(rs.getString("descricao"));
+                produto.setPreco(rs.getDouble("preco"));
+                produto.setStatus(rs.getBoolean("status"));
+
+                // Inserir o objeto produto na lista
+                produtoList.add(produto);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                ConnectionFactory.closeConnection(conn, stmt, rs);
+            } catch (Exception ex) {
+                System.out.println("Problemas ao fechar a conexão. Erro: " + ex.getMessage());
+            }
+        }
+
+        return produtoList;
     }
 
     @Override
-    public Object getById(int id) {
-        return null;
+    public Produto getById(int id) {
+
+        Produto produtoEncontrado = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String sql = "SELECT * FROM produto WHERE codigo = ?";
+
+        try {
+            stmt = this.conn.prepareStatement(sql);
+            stmt.setInt(1, id);
+
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                produtoEncontrado = new Produto();
+
+                produtoEncontrado.setId(rs.getInt("codigo"));
+                produtoEncontrado.setDescricao(rs.getString("descricao"));
+                produtoEncontrado.setPreco(rs.getDouble("preco"));
+                produtoEncontrado.setStatus(rs.getBoolean("status"));
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                ConnectionFactory.closeConnection(conn, stmt, rs);
+            } catch (Exception ex) {
+                System.out.println("Problemas ao fechar a conexão. Erro: " + ex.getMessage());
+            }
+        }
+
+        return produtoEncontrado;
     }
 
     @Override
