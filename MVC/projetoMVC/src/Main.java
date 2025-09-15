@@ -41,18 +41,9 @@ public class Main {
                     JOptionPane.showMessageDialog(null, mensagemInsert);
                     break;
                 case 2:
-                    List<Produto> produtoList = controller.getAll();
+                    List<Produto> listaTodosProduto = controller.getAll();
 
-                    StringBuilder listaImprimir = new StringBuilder();
-
-                    for (Produto produto : produtoList) {
-                        listaImprimir.append(produto.getDescricao());
-                        listaImprimir.append(" - ");
-                        listaImprimir.append(produto.getPreco());
-                        listaImprimir.append("\n");
-
-                    }
-                    JOptionPane.showMessageDialog(null, listaImprimir.toString());
+                    controller.printFormatedList(listaTodosProduto);
 
                     break;
                 case 3:
@@ -76,18 +67,7 @@ public class Main {
                     String descricaoBusca = JOptionPane.showInputDialog("Digite a descrição para buscar o produto");
                     List<Produto> produtosFiltradosPorDesc = controller.getByDescricao(descricaoBusca);
 
-                    StringBuilder listaFiltrados = new StringBuilder();
-
-                    for (Produto produto : produtosFiltradosPorDesc) {
-                        listaFiltrados.append(produto.getId());
-                        listaFiltrados.append(" - ");
-                        listaFiltrados.append(produto.getDescricao());
-                        listaFiltrados.append(" - ");
-                        listaFiltrados.append(produto.getPreco());
-                        listaFiltrados.append("\n");
-                    }
-
-                    JOptionPane.showMessageDialog(null, listaFiltrados.toString());
+                    controller.printFormatedList(produtosFiltradosPorDesc);
 
                     break;
                 case 5:
