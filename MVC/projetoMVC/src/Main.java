@@ -15,8 +15,12 @@ public class Main {
         menu.append("\n[1] Cadastrar");
         menu.append("\n[2] Listar");
         menu.append("\n[3] Buscar por ID");
+        menu.append("\n[4] Buscar por Descrição");
+        menu.append("\n[5] Excluir");
+        menu.append("\n[6] Alterar");
         menu.append("\n[0] Sair");
         menu.append("\n\n Selecione uma opção");
+
 
         int opcao = -1;
 
@@ -67,6 +71,33 @@ public class Main {
                         JOptionPane.showMessageDialog(null, "Produto não encontrado!");
                     }
 
+                    break;
+                case 4:
+                    String descricaoBusca = JOptionPane.showInputDialog("Digite a descrição para buscar o produto");
+                    List<Produto> produtosFiltradosPorDesc = controller.getByDescricao(descricaoBusca);
+
+                    StringBuilder listaFiltrados = new StringBuilder();
+
+                    for (Produto produto : produtosFiltradosPorDesc) {
+                        listaFiltrados.append(produto.getId());
+                        listaFiltrados.append(" - ");
+                        listaFiltrados.append(produto.getDescricao());
+                        listaFiltrados.append(" - ");
+                        listaFiltrados.append(produto.getPreco());
+                        listaFiltrados.append("\n");
+                    }
+
+                    JOptionPane.showMessageDialog(null, listaFiltrados.toString());
+
+                    break;
+                case 5:
+                    // Validar se o produto para o codigo digitado
+                    int idDelete = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do produto para excluir"));
+
+                    //Se existir executar
+                    controller.delete(idDelete);
+
+                    JOptionPane.showMessageDialog(null, "Produto exluído com sucesso!");
                     break;
                 case 0:
                     JOptionPane.showMessageDialog(null, "Saindo do sistema...");
