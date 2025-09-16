@@ -71,13 +71,9 @@ public class Main {
 
                     break;
                 case 5:
-                    // Validar se o produto para o codigo digitado
                     int idDelete = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do produto para excluir"));
 
-                    //Se existir executar
                     controller.delete(idDelete);
-
-                    JOptionPane.showMessageDialog(null, "Produto exluído com sucesso!");
                     break;
                 case 0:
                     JOptionPane.showMessageDialog(null, "Saindo do sistema...");
