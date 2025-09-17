@@ -75,6 +75,23 @@ public class Main {
 
                     controller.delete(idDelete);
                     break;
+                case 6:
+                    int idAlterar = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do produto a ser alterado"));
+                    Produto produtoAlterar = controller.getById(idAlterar);
+
+                    // Validando se o produto existe no banco
+                    if ( produtoAlterar != null) {
+                        String novaDescricao = JOptionPane.showInputDialog("Digite a nova descrição");
+                        Double novoPreco = Double.parseDouble(JOptionPane.showInputDialog("Digite o novo preço"));
+
+                        produtoAlterar.setDescricao(novaDescricao);
+                        produtoAlterar.setPreco(novoPreco);
+
+                        controller.update(produtoAlterar);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Produto não encontrado para o código: " + idAlterar);
+                    }
+                    break;
                 case 0:
                     JOptionPane.showMessageDialog(null, "Saindo do sistema...");
                     break;
