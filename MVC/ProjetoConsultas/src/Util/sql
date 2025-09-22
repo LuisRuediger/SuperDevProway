@@ -29,7 +29,16 @@ CREATE TABLE medico (
 
 ********** CONSULTA **********
 
-
+CREATE TABLE consulta (
+	id SERIAL,
+	data DATE,
+	id_medico INTEGER NOT NULL,
+	id_paciente INTEGER NOT NULL,
+	status BOOLEAN,
+	CONSTRAINT pk_consulta PRIMARY KEY (id),
+	CONSTRAINT fk_consulta_medico FOREIGN KEY (id_medico) REFERENCES medico (id),
+	CONSTRAINT fk_consulta_paciente FOREIGN KEY (id_paciente) REFERENCES paciente (id)
+);
 
 
 
