@@ -1,0 +1,59 @@
+********** PACIENTE **********
+
+CREATE TABLE paciente (
+	id SERIAL,
+	nome VARCHAR NOT NULL,
+	idade INTEGER,
+	telefone VARCHAR(14),
+	tipoSanguineo VARCHAR(3),
+	doador BOOLEAN,
+	convenio VARCHAR NOT NULL,
+	CONSTRAINT pk_paciente PRIMARY KEY (id)
+);
+
+
+********** MEDICO **********
+
+CREATE TABLE medico (
+	id SERIAL,
+	nome VARCHAR NOT NULL,
+	idade INTEGER,
+	telefone VARCHAR(14),
+	crm INTEGER,
+	especialidade VARCHAR,
+	efetivo BOOLEAN,
+	convenio VARCHAR NOT NULL,
+	CONSTRAINT pk_medico PRIMARY KEY (id)
+);
+
+
+********** CONSULTA **********
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
