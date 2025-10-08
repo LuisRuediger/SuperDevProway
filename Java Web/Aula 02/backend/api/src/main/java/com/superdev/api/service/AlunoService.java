@@ -19,14 +19,12 @@ public class AlunoService {
     // Métod para adicionar um elemento a lista
     public String insert(String novoALuno) {
         if (this.alunoList.contains(novoALuno)) {
-            return "" +
-                    "<h2>Erro ao cadastrar aluno</h2>" +
-                    "<p>" + novoALuno +" já existe dentro da lista</p>";
+            return "Erro ao cadastrar aluno: " +
+                    novoALuno +" já existe dentro da lista";
         } else {
             this.alunoList.add(novoALuno);
-            return "" +
-                    "<h2>Sucesso!</h2>" +
-                    "<p>" + novoALuno +" foi inserido na lista</p>";
+            return "Sucesso! " +
+                    novoALuno +" foi inserido na lista";
         }
     }
 
