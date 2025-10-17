@@ -1,7 +1,7 @@
 package com.superdev.crud_jpa.service;
 
 import com.superdev.crud_jpa.model.Categoria;
-import com.superdev.crud_jpa.repository.CategoriaRespository;
+import com.superdev.crud_jpa.repository.CategoriaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,9 +9,9 @@ import java.util.List;
 @Service
 public class CategoriaService {
 
-    private CategoriaRespository repository;
+    private final CategoriaRepository repository;
 
-    public CategoriaService(CategoriaRespository categoriaRepository){
+    public CategoriaService(CategoriaRepository categoriaRepository){
         repository = categoriaRepository;
     }
 
