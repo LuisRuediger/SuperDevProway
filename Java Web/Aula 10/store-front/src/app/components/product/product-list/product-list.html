@@ -1,0 +1,25 @@
+<h2>Lista de produtos</h2>
+<a routerLink="/produto/novo">Novo</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{ product.id }}</td>
+            <td>{{ product.nome }}</td>
+            <td>{{ product.preco }}</td>
+            <td>{{ product.quantidade }}</td>
+            <td>
+                <button (click)="delete(product.id)">Excluir</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
