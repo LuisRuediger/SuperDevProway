@@ -1,25 +1,48 @@
-<h2>Lista de produtos</h2>
-<a routerLink="/produto/novo">Novo</a>
+<div class="w-100">
+    <div class="col-12 py-3 mt-3 titulo">
+        <h2>Lista de produtos</h2>
+    </div>
 
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Preço</th>
-            <th>Quantidade</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let product of products">
-            <td>{{ product.id }}</td>
-            <td>{{ product.nome }}</td>
-            <td>{{ product.preco }}</td>
-            <td>{{ product.quantidade }}</td>
-            <td>
-                <button (click)="delete(product.id)">Excluir</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+    <div class="col-12 py-3 d-flex justify-content-end">
+        <a routerLink="/produto/novo">
+            <button class="btn btn-primary">Novo</button>
+        </a>
+    </div>
+
+    <div class="col-12">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.nome }}</td>
+                    <td>{{ product.preco }}</td>
+                    <td>{{ product.quantidade }}</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                ...
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" [routerLink]="['/produto/editar', product.id]">Editar</a>
+                                    <button class="dropdown-item" (click)="delete(product.id || 0)">Excluir</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
